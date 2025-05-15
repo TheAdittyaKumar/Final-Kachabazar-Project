@@ -1,0 +1,43 @@
+
+Setting environment for using XAMPP for Windows.
+User@DESKTOP-T19MFTD c:\xampp
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.4.32-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> CREATE DATABASE kachabazarDB;
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [(none)]> USE kachabazarDB;
+Database changed
+MariaDB [kachabazarDB]> CREATE TABLE Seller(seller_id INT AUTO_INCREMENT PRIMARY KEY, seller_name VARCHAR(100) NOT NULL, store_name VARCHAR(100) NOT NULL, seller_email VARCHAR(255) NOT NULL UNIQUE, seller_password VARCHAR(100) NOT NULL, date DATE, store_location VARCHAR(255), store_description TEXT);
+Query OK, 0 rows affected (0.034 sec)
+
+MariaDB [kachabazarDB]> CREATE TABLE User (customer_id INT AUTO_INCREMENT PRIMARY KEY, admin BOOLEAN DEFEAULT 0, customer BOOLEAN DEFAULT 1, Uname VARCHAR(100) NOT NULL, PhoneNo VARCHAR(20), Upassword VARCHAR(100) NOT NULL, Uemail VARCHAR(100) NOT NULL UNIQUE);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, customer BOOLEAN DEFAULT 1, Uname VARCHAR(100) NOT NULL, PhoneNo VARCHAR(2...' at line 1
+MariaDB [kachabazarDB]> CREATE TABLE User (customer_id INT AUTO_INCREMENT PRIMARY KEY, admin BOOLEAN DEFAULT 0, customer BOOLEAN DEFAULT 1, Uname VARCHAR(100) NOT NULL, PhoneNo VARCHAR(20), Upassword VARCHAR(100) NOT NULL, Uemail VARCHAR(100) NOT NULL UNIQUE);
+Query OK, 0 rows affected (0.025 sec)
+
+MariaDB [kachabazarDB]> CREATE TABLE User_Role (UScustomer_id INT, USadmin BOOLEAN DEFAULT 0, UScustomer BOOLEAN DEFAULT 1, PRIMARY KEY (UScustomer_id), FOREIGN KEY (UScustomer_id) REFERENCES User(customer_id));
+Query OK, 0 rows affected (0.039 sec)
+
+MariaDB [kachabazarDB]> CREATE TABLE Grocery_items (item_id INT AUTO_INCREMENT PRIMARY KEY, Groc_name VARCHAR(100) NOT NULL, status VARCHAR(50), category VARCHAR(100), description TEXT, price DECIMAL(10,2), Groc_quantity INT, SEseller_id INT, FOREIGN KEY (SEseller_id) REFERENCES Seller(seller_id));
+Query OK, 0 rows affected (0.026 sec)
+
+MariaDB [kachabazarDB]> CREATE TABLE `Order` (order_id INT AUTO_INCREMENT PRIMARY KEY, ORdate_time DATETIME DEFAULT CURRENT_TIMESTAMP, total_bill DECIMAL(10,2), ORpayment_status VARCHAR(50), UScustomer_id INT, FOREIGN KEY (UScustomer_id) REFERENCES User(customer_id));
+Query OK, 0 rows affected (0.023 sec)
+
+MariaDB [kachabazarDB]> CREATE TABLE Contain (GRitem_id INT, ORorder_id INT, quantity INT DEFAULT 1, PRIMARY KEY (GRitem_id, ORorder_id), FOREIGN KEY (GRitem_id) REFERENCES Grocery_items(item_id), FOREIGN KEY (ORorder_id) REFERENCES `Order`(order_id));
+Query OK, 0 rows affected (0.027 sec)
+
+MariaDB [kachabazarDB]> CREATE TABLE `Ratings&Review` (review_id INT AUTO_INCREMENT PRIMARY KEY, rating INT CHECK (rating BETWEEN 1 AND 5), review TEXT, Rdate_time DATETIME DEFAULT CURRENT_TIMESTAMP, SEseller_id INT, FOREIGN KEY (SEseller_id) REFERENCES Seller(seller_id));
+Query OK, 0 rows affected (0.029 sec)
+
+MariaDB [kachabazarDB]>
+

@@ -1,0 +1,811 @@
+/* Login Page background */
+body.login-page {
+    background-image: url('../background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Login Box */
+.login-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    text-align: center;
+    width: 320px;
+}
+
+/* Heading inside login */
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Email and Password inputs */
+.login-container input[type="email"],
+.login-container input[type="password"] {
+    width: 90%;
+    padding: 8px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Submit button */
+.login-container input[type="submit"] {
+    width: 95%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hover submit button */
+.login-container input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Hyperlinks in login */
+.login-container a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+
+/* ======================================== */
+/* Dashboard Common Styling */
+body.dashboard-page {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #ffffff;
+    width: 250px;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Main Content Area */
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: #f9f9f9;
+}
+
+/* White Box Cards */
+.box {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Tables inside dashboard */
+.main-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.main-content table th, 
+.main-content table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Rating star */
+.rating-star {
+    color: #e91e63;
+    font-size: 24px;
+    vertical-align: middle;
+}
+
+/* ======================================== */
+/* Styling ONLY for manage_products.php */
+
+body.manage-products-page {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 30px;
+}
+
+/* Form for Adding New Product */
+.add-product-form {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.add-product-form input[type="text"],
+.add-product-form input[type="number"],
+.add-product-form select,
+.add-product-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add-product-form input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-product-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Product Table */
+.product-table {
+    width: 100%;
+    background-color: #ffffff;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product-table th, 
+.product-table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-table th {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Buttons inside Manage Products table */
+.product-table form {
+    display: inline-block;
+    margin: 2px;
+}
+
+.product-table input[type="submit"] {
+    background-color: #28a745;
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.product-table input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Special styling for delete button */
+.product-table input[name="delete_product"] {
+    background-color: #dc3545;
+}
+
+.product-table input[name="delete_product"]:hover {
+    background-color: #c82333;
+}
+
+/* Back Links at Bottom */
+.back-links {
+    margin-top: 20px;
+}
+
+.back-links a {
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 15px;
+    color: #007bff;
+}
+
+.back-links a:hover {
+    color: #0056b3;
+}
+
+/* Styling for Add New Product Box */
+.add-product-box {
+    background-color: #ffffff;
+    padding: 25px 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.add-product-box h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+/* Form Inputs inside the box */
+.add-product-box input[type="text"],
+.add-product-box input[type="number"],
+.add-product-box select,
+.add-product-box textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+}
+
+/* Submit Button */
+.add-product-box input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.add-product-box input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Labels */
+.add-product-box label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #555;
+}
+/* Center heading for Manage Products */
+.manage-products-header {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.manage-products-header h2 {
+    font-size: 26px;
+    color: #333;
+}
+/* Buttons under Manage Products */
+.manage-buttons {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.manage-buttons .action-button {
+    display: inline-block;
+    background-color: #007bff; /* Blue */
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.manage-buttons .action-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Specific styling for logout button */
+.manage-buttons .logout-button {
+    background-color: #dc3545; /* Red */
+}
+
+.manage-buttons .logout-button:hover {
+    background-color: #a71d2a; /* Darker red on hover */
+}
+
+/* Form Container for Update Store Info */
+.form-container {
+    background-color: #ffffff;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-container input[type="text"],
+.form-container textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Special button inside the form */
+.form-container .action-button {
+    background-color: #28a745; /* Green for Update */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.form-container .action-button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+body.admin-page {
+    background-image: url('../backgroundadmin.png'); /* <--- correct based on your folder */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Login container */
+.login-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    text-align: center;
+    width: 320px;
+}
+
+/* Input and button styling */
+.login-container input[type="email"],
+.login-container input[type="password"],
+.login-container input[type="submit"] {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.login-container input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.login-container input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.login-container a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+
+/* Admin Dashboard Specific Styling */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    background-color: #ffffff;
+    width: 250px;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    background-color: #f9f9f9;
+}
+
+.main-content h2 {
+    margin-bottom: 10px;
+    font-size: 26px;
+}
+
+.box {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.action-links {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.action-links li {
+    margin-bottom: 10px;
+}
+
+.action-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.action-button:hover {
+    background-color: #218838;
+    color: white;
+}
+/* Form Box for Updating Admin Info */
+.update-form {
+    background-color: #ffffff;
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Input Fields */
+.update-form input[type="text"],
+.update-form input[type="password"] {
+    width: 95%;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Submit Button */
+.update-form input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.update-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Center Heading */
+.main-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.seller-details-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.seller-info {
+    flex: 1;
+}
+
+.seller-photo {
+    width: 250px;
+    height: 250px;
+    border: 3px solid black;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seller-photo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Match admin layout for seller */
+.seller-details-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.seller-info {
+    flex: 1;
+}
+
+.store-photo {
+    width: 250px;
+    height: 250px;
+    border: 3px solid black;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.store-photo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Store Cover Image - full width inside the box but limited height */
+.store-cover {
+    margin-top: 15px;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.store-cover img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Sidebar (Fix squashed look & better text handling) */
+.sidebar {
+    background-color: #ffffff;
+    width: 250px;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+}
+
+.sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 5px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sidebar ul li a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Store Cover Styling */
+.store-cover {
+    margin-top: 20px;
+    width: 100%;
+    max-height: 250px;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #f1f1f1;
+    border: 2px solid #ddd;
+}
+
+.store-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Fix squashed menu text */
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 12px 20px;           /* More horizontal padding */
+    display: block;
+    border-radius: 5px;
+    text-align: left;
+    white-space: nowrap;          /* Prevents text from wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis;      /* Adds "..." if text is too long */
+    font-size: 16px;
+}
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 12px 20px;
+    display: block;
+    border-radius: 5px;
+    white-space: nowrap;       /* Prevent text from wrapping */
+    overflow: hidden;          /* Hide overflow just in case */
+    text-overflow: ellipsis;   /* Add "..." if too long */
+    font-size: 16px;
+}
+.sidebar {
+    width: 280px; /* increased to fit long menu items */
+}
+
+.sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+/* Wrap the whole dashboard content inside a centered fixed-width container */
+.fixed-width-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* ====================== */
+/* Styled Table for Orders */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.styled-table thead tr {
+    background-color: #007bff;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.styled-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}

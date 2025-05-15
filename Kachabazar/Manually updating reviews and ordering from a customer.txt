@@ -1,0 +1,13 @@
+INSERT INTO `order` (ORdate_time, total_bill, ORpayment_status, UScustomer_id)
+VALUES (NOW(), 0, 'Paid', 1);
+SELECT LAST_INSERT_ID();
+INSERT INTO contain (GRitem_id, ORorder_id, quantity)
+VALUES (270, 2, 3);
+UPDATE `order`
+SET total_bill = 135.00
+WHERE order_id = 2;
+UPDATE Grocery_items
+SET Groc_quantity = Groc_quantity - 3
+WHERE item_id = 270 AND SEseller_id = 5;
+INSERT INTO `ratings&review` (rating, review, Rdate_time, SEseller_id, UScustomer_id)
+VALUES (5, 'This chips brought my back to life. Thank you Ambuja.', NOW(), 5, 1);
